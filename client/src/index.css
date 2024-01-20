@@ -1,3 +1,100 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  /* :root {
+    --color-bkg: 210deg 40% 98%;
+    --color-content: 217deg 32.6% 17.5%;
+    --color-accent1: 288deg 95.8% 90.6%;
+    --color-accent2: 168deg 83.8% 78.2%;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bkg: 217deg 32.6% 17.5%;
+      --color-content: 210deg 40% 98%;
+      --color-accent1: 288deg 95.8% 60.6%;
+      --color-accent2: 168deg 83.8% 48.2%;
+    }
+  } 
+  :root[data-theme='dark'] {
+    --color-bkg: 217deg 32.6% 17.5%;
+    --color-content: 210deg 40% 100%;
+    --color-accent1: 288deg 95.8% 60.6%;
+    --color-accent2: 168deg 83.8% 48.2%;
+  }
+  :root[data-theme='light'] {
+    --color-bkg: 217deg 32.6% 57.5%;
+    --color-content: 210deg 40% 18%;
+    --color-accent1: 288deg 95.8% 80.6%;
+    --color-accent2: 168deg 83.8% 72.2%;
+  } */
+  * {
+    --brand-hue: 168deg;
+    --brand-sat: 53%;
+    --brand-light: 34%;
+    @apply scroll-smooth;
+  }
+  :root[data-theme="light"] {
+    --color-brand: var(--brand-hue) var(--brand-sat) var(--brand-light);
+    --color-content: var(--brand-hue) var(--brand-sat) 10%;
+    --color-content2: var(--brand-hue) 30% 30%;
+    --color-accent1: 288deg 95.8% 60.6%;
+    --color-accent2: 168deg 83.8% 48.2%;
+    --color-bkg: var(--brand-hue) 25% 90%;
+    --color-bkg2: var(--brand-hue) 35% 80%;
+    /* --color-bkg2: var(--brand-hue) 10% 10%; */
+  }
+  :root[data-theme="dark"] {
+    --color-brand: var(--brand-hue) var(--brand-sat) var(--brand-light);
+    --color-content: var(--brand-hue) 15% 85%;
+    --color-content2: var(--brand-hue) 5% 65%;
+    --color-accent1: 288deg 95.8% 70.6%;
+    --color-accent2: 168deg 83.8% 72.2%;
+    --color-bkg: var(--brand-hue) 10% 10%;
+    --color-bkg2: var(--brand-hue) 20% 0%;
+    /* --color-bkg2: var(--brand-hue) 25% 90%; */
+  }
+  ::-webkit-scrollbar {
+    @apply w-2.5;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply rounded-md;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-md;
+  }
+
+  * {
+    @apply font-sans;
+  }
+  h1 {
+    @apply text-5xl font-bold;
+  }
+  h2 {
+    @apply text-4xl font-bold italic;
+  }
+  h3 {
+    @apply text-3xl;
+  }
+  h4 {
+    @apply text-2xl;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply rounded-full bg-red-500 px-4 py-2 text-center text-white;
+  }
+  .submit {
+    @apply bg-green-500;
+  }
+}
