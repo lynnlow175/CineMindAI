@@ -11,6 +11,7 @@ Make sure to cd into server and client directories respectively
 In client:
 
 ```
+cd client
 npm i
 npm run dev
 ```
@@ -19,6 +20,7 @@ In server:
 Run commands in order to run the right python environment
 
 ```
+cd server
 python -m venv .venv
 source ./.venv/Scripts/activate
 python.exe -m pip install --upgrade pip
