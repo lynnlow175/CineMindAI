@@ -15,16 +15,22 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/members")
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: "Godzilla" }),
+    }
+
+    fetch("http://localhost:5000/recommend", requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        setData(data.members);
+        setData(data);
         console.log(data);
       });
   }, []);
   return (
     <>
-      <NavigationMenu>
+      {/* <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
@@ -53,12 +59,12 @@ function App() {
             </NavigationMenuContent>
           </NavigationMenuItem>
         </NavigationMenuList>
-      </NavigationMenu>
+      </NavigationMenu> */}
       {/* <p className="text-3xl font-bold">Hello</p> */}
-      {/* {data &&
+      {data &&
         data?.map((members: any) => {
           return <p>{members}</p>;
-        })} */}
+        })}
       {/* <Button>Click me</Button> */}
     </>
   );
